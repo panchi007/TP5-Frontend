@@ -1,0 +1,55 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Precio Pasaje</th>
+                <th scope="col">Categoria Pasajero</th>
+                <th scope="col">Fecha Compra</th>
+                <th scope="col">Persona</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of Pasaje  index as i ">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.precioPasaje}}</td>
+                <td>{{item.categoriaPasajero}}</td>
+                <td>{{item.fechaCompra}}</td>
+                <td>{{item.pasajero.nombre}} . {{item.pasajero.apellido}}</td>
+                <td>
+                    <button class="btn btn-success" (click)="modificarPasaje(item)">MOD</button> --
+                    <button class="btn btn-danger" (click)="borrarPasaje(item._id)">BORRAR</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">buscar por categoria</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" [(ngModel)]="leelapalabra">
+    </div>
+    
+    <button type="button" class="btn btn-primary" (click)="cargarunPasaje(leelapalabra)">Buscar</button>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Precio Pasaje</th>
+                <th scope="col">Categoria Pasajero</th>
+                <th scope="col">Fecha Compra</th>
+                <th scope="col">Persona</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let items of Pasaje1 ">
+                <th scope="row">1</th>
+                <td>{{items.precioPasaje}}</td>
+                <td>{{items.categoriaPasajero}}</td>
+                <td>{{items.fechaCompra}}</td>
+                <td>{{items.pasajero.nombre}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

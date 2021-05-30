@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header">
+        GESTION DE SECTORES
+    </div>
+    <div class="card-body">
+
+        <form class="formulario">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Titulo</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="titulo"
+                    aria-describedby="emailHelp" [(ngModel)]="noti.titulo">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Noticia</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="noticia"
+                    [(ngModel)]="noti.noticia">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Imagen</label>
+                <input type="file" class="form-control" id="exampleInputPassword1" name="img" alife-file-to-base64 multiple
+                (onFileChanged)="onFileChanges($event)"
+                accept="image/x-png,image/gif,image/jpeg" >
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="vigente"
+                    [(ngModel)]="noti.vigente">
+                <label class="form-check-label" for="exampleCheck1">Vigente</label>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="generarNoticia()">Enviar</button>
+        </form>
+
+    </div>
+</div>

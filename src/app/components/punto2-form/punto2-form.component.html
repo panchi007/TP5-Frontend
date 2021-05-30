@@ -1,0 +1,60 @@
+<div class="container">
+    <section class="col-12">
+        <h5 class="col-12 text-center my-5">Seleccione un idioma y su contraparte</h5>
+        <div class="col-10 col-sm-6 row justify-content-evenly m-auto">
+            <button class="col-4 col-md-2 btn border border-secondary m-2 m-md-1" type="button" (click)="isSourceIt()"
+                [disabled]="translateLog.target == 'it'">
+                <img class="col-12 col-md-6 p-3 p-md-0" src="./../../../assets/imagenes/italia.png" />
+            </button>
+            <button class="col-4 col-md-2 btn border border-secondary m-2 m-md-1" type="button" (click)="isSourceFr()"
+                [disabled]="translateLog.target == 'fr'">
+                <img class="col-12 col-md-6 p-3 p-md-0" src="../../..//assets/imagenes/bandera.png" />
+            </button>
+            <button class="col-4 col-md-2 btn border border-secondary m-2 m-md-1" type="button" (click)="isSourceEn()"
+                [disabled]="translateLog.target == 'en'">
+                <img class="col-12 col-md-6 p-3 p-md-0" src="../../../assets/imagenes/idioma-en-ingles.png" />
+            </button>
+            <button class="col-4 col-md-2 btn border border-secondary m-2 m-md-1" type="button" (click)="isSourceEs()"
+                [disabled]="translateLog.target == 'es'">
+                <img class="col-12 col-md-6 p-3 p-md-0" src="../../../assets/imagenes/espana.png" />
+            </button>
+        </div>
+
+        <textarea class="col-12 text-center border border-2 mt-3" rows="5" name="entradaDato"
+            [(ngModel)]="translateLog.input"></textarea>
+
+        <div class="col-10 col-md-4 text-center border border-2 rounded my-2 m-auto">
+            <p>{{translateLog.textoDe}} {{translateLog.textoA}}</p>
+        </div>
+
+        <textarea class="col-12 text-center border border-2 mb-3" rows="5" disabled>{{translateLog.answer}}</textarea>
+
+        <div class="col-10 col-sm-6 row justify-content-evenly m-auto">
+            <button class="col-4 col-md-2 btn border border-secondary m-2 m-md-1" type="button" (click)="isSourceIt()"
+                [disabled]="translateLog.source == 'it'">
+                <img class="col-12 col-md-6 p-3 p-md-0" src="./../../../assets/imagenes/italia.png" />
+            </button>
+            <button class="col-4 col-md-2 btn border border-secondary m-2 m-md-1" type="button" (click)="isTargetFr()"
+                [disabled]="translateLog.source == 'fr'">
+                <img class="col-12 col-md-6 p-3 p-md-0" src="../../..//assets/imagenes/bandera.png" />
+            </button>
+            <button class="col-4 col-md-2 btn border border-secondary m-2 m-md-1" type="button" (click)="isTargetEn()"
+                [disabled]="translateLog.source == 'en'">
+                <img class="col-12 col-md-6 p-3 p-md-0" src="../../../assets/imagenes/idioma-en-ingles.png" />
+            </button>
+            <button class="col-4 col-md-2 btn border border-secondary m-2 m-md-1" type="button" (click)="isTargetEs()"
+                [disabled]="translateLog.source == 'es'">
+                <img class="col-12 col-md-6 p-3 p-md-0" src="../../../assets/imagenes/espana.png" />
+            </button>
+        </div>
+
+        <div class="col-8 col-md-3 m-auto mt-3">
+            <button class="col-12 btn btn-primary" type="button" (click)="getAnswer()">TRADUCIR</button>
+        </div>
+
+        <div class="col-8 col-md-3 m-auto mt-3">
+            <button class="col-12 btn btn-primary" type="button" (click)="save()" *ngIf="buttomSave">Save</button>
+        </div>
+    </section>
+
+</div>

@@ -1,0 +1,19 @@
+<section class="row justify-content-center col-12 px-sm-5 m-auto">
+     <button class="col-1 border-end-0 border b-w border-secondary  btn btn-info" type="button" style="background-color: cornflowerblue;" (click)="nextLeft()">
+       atras 
+    </button> 
+    <div  *ngIf="Noticia" class="col-9 col-sm-6 mx-1 b-w border-top border-secondary">
+        <img class="col-12 mt-1" src="{{Noticia[posicion].img}}" alt="{{Noticia[posicion].titulo}}" />
+        <div class="text-center border border-top-0 b-w border-secondary">
+            <h2>{{Noticia[posicion].titulo}}</h2>
+             <p>{{Noticia[posicion].noticia}}</p>  
+        </div>
+    </div>
+ 
+     <button class="col-1 border-start-0 border b-w border-secondary btn btn-info" type="button" style="background-color: rgb(76, 76, 143);" (click)="nextRight()">
+        siguiente
+    </button> 
+</section>
+
+
+

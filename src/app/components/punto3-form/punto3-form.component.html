@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header">
+        GESTION DE SECTORES
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="mb-3">
+                <label for="idnombre" class="form-label">Precio Pasaje</label>
+                <input name="nombre" type="text" class="form-control" id="idnombre" [(ngModel)]="pasaje.precioPasaje">
+            </div>
+            <div class="mb-3">
+                <label for="idresponsable" class="form-label">Categoria Pasajero</label>
+                <select class="form-select" name="responsable" [(ngModel)]="pasaje.categoriaPasajero">
+                    <option *ngFor="let cater of Categoria" [ngValue]="cater">{{cater}} 
+                    </option>
+                </select>
+               <h5 *ngIf="varconter ngIfElse" >la categoria del pasajero es "{{varconter}}"</h5> 
+            </div>
+            <div class="mb-3">
+                <label for="idemail" class="form-label">Fecha Compra</label>
+                <input name="email" type="date" class="form-control" id="idemail" [(ngModel)]="pasaje.fechaCompra">
+            </div>
+            <div class="mb-3">
+                <label for="idresponsable" class="form-label">Pasajero</label>
+                <select class="form-select" name="responsable" [(ngModel)]="pasaje.pasajero">
+                    <option *ngFor="let pasajer of Pasajero" [ngValue]="pasajer">{{pasajer.apellido}} ,
+                        {{pasajer.nombre}}
+                    </option>
+                </select>
+            </div>
+
+            <button type="button" class="btn btn-primary" (click)="agregarPasaje()" *ngIf="accion == 'new'">Guardar</button>
+            <button type="button" class="btn btn-primary" (click)="modificarPasaje()" *ngIf="accion == 'update'">Actualizar</button>
+
+        </form>
+    </div>
+</div>

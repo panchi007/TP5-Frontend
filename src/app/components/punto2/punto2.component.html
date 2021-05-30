@@ -1,0 +1,60 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Texto Origen</th>
+                <th scope="col">Idioma Origen</th>
+                <th scope="col">Texto Destino</th>
+                <th scope="col">Idioma Destino</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of LogTraductor  index as i ">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.textoOrigen}}</td>
+                <td>{{item.idiomaOrigen}}</td>
+                <td>{{item.textoDestino}}</td>
+                <td>{{item.idiomaDestino}}</td>
+                <td>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+    <h2>Buscar Por idioma Origen</h2>
+    
+    
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">escribe el ideoma origen</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  [(ngModel)]="leerIdiomaOrigen" >
+     
+      </div>
+      <button class="btn btn-success" (click)=" obtenerLogTraductorporParametro(leerIdiomaOrigen)">Buscar</button> --
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Texto Origen</th>
+                <th scope="col">Idioma Origen</th>
+                <th scope="col">Texto Destino</th>
+                <th scope="col">Idioma Destino</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of LogTraductor1  index as i ">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.textoOrigen}}</td>
+                <td>{{item.idiomaOrigen}}</td>
+                <td>{{item.textoDestino}}</td>
+                <td>{{item.idiomaDestino}}</td>
+                <td>
+                    <button class="btn btn-success" (click)=" obtenerLogTraductorporParametro(leerIdiomaOrigen)">MOD</button> --
+                    <button class="btn btn-danger" (click)="borrarPasaje(item._id)">BORRAR</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
